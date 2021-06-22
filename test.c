@@ -5,6 +5,8 @@
 
 struct stat st = {0};
 
+static int counter;
+
 int make_app_dir(){
     if (stat("./apps", &st)==-1){
         mkdir("./apps", 0700);
@@ -15,6 +17,8 @@ int make_app_dir(){
 
 int main(){
     make_app_dir();
+    counter += 1;
+    printf ("Executing %d\n", counter);
     return 0;
 }
 
