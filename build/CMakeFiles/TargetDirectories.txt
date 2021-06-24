@@ -1,0 +1,3 @@
+/Users/ishmukhametov/Developer/octop-os/build/CMakeFiles/rebuild_cache.dir
+/Users/ishmukhametov/Developer/octop-os/build/CMakeFiles/edit_cache.dir
+/Users/ishmukhametov/Developer/octop-os/build/CMakeFiles/octo.dir
