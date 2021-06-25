@@ -3,6 +3,8 @@
         "string": "c",
         "iosfwd": "c",
         "typeinfo": "c",
-        "locale": "c"
+        "locale": "c",
+        "numbers": "c",
+        "unistd.h": "c"
     }
 }
