@@ -25,7 +25,7 @@ enum AppState launch(enum AppState current_state){
 }
 
 int read_args(struct App *a){
-    FILE *fp = fopen("lifecicle", "r"); 
+    FILE *fp = fopen("lifecycle", "r"); 
 
     char buff[BUFSIZE];
     while(fgets(buff, BUFSIZE - 1, fp) != NULL) {
@@ -37,8 +37,9 @@ int read_args(struct App *a){
         }
         if (strcmp(buff, "2") == 0) {
             if (a->state != TERMINATED) {
-                a->state = FOREGROUND;
                 lc_terminate(a);
+                a->state = TERMINATED;
+                exit(1);
             }
            
         }

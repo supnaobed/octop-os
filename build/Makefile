@@ -129,77 +129,77 @@ octo/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/build
 .PHONY : octo/fast
 
-src/app.o: src/app.c.o
-.PHONY : src/app.o
+src/sdk/app.o: src/sdk/app.c.o
+.PHONY : src/sdk/app.o
 
 # target to build an object file
-src/app.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/src/app.c.o
-.PHONY : src/app.c.o
+src/sdk/app.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/src/sdk/app.c.o
+.PHONY : src/sdk/app.c.o
 
-src/app.i: src/app.c.i
-.PHONY : src/app.i
+src/sdk/app.i: src/sdk/app.c.i
+.PHONY : src/sdk/app.i
 
 # target to preprocess a source file
-src/app.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/src/app.c.i
-.PHONY : src/app.c.i
+src/sdk/app.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/src/sdk/app.c.i
+.PHONY : src/sdk/app.c.i
 
-src/app.s: src/app.c.s
-.PHONY : src/app.s
+src/sdk/app.s: src/sdk/app.c.s
+.PHONY : src/sdk/app.s
 
 # target to generate assembly for a file
-src/app.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/src/app.c.s
-.PHONY : src/app.c.s
+src/sdk/app.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/src/sdk/app.c.s
+.PHONY : src/sdk/app.c.s
 
-src/robmov.o: src/robmov.c.o
-.PHONY : src/robmov.o
+src/sdk/robmov.o: src/sdk/robmov.c.o
+.PHONY : src/sdk/robmov.o
 
 # target to build an object file
-src/robmov.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/src/robmov.c.o
-.PHONY : src/robmov.c.o
+src/sdk/robmov.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/src/sdk/robmov.c.o
+.PHONY : src/sdk/robmov.c.o
 
-src/robmov.i: src/robmov.c.i
-.PHONY : src/robmov.i
+src/sdk/robmov.i: src/sdk/robmov.c.i
+.PHONY : src/sdk/robmov.i
 
 # target to preprocess a source file
-src/robmov.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/src/robmov.c.i
-.PHONY : src/robmov.c.i
+src/sdk/robmov.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/src/sdk/robmov.c.i
+.PHONY : src/sdk/robmov.c.i
 
-src/robmov.s: src/robmov.c.s
-.PHONY : src/robmov.s
+src/sdk/robmov.s: src/sdk/robmov.c.s
+.PHONY : src/sdk/robmov.s
 
 # target to generate assembly for a file
-src/robmov.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/src/robmov.c.s
-.PHONY : src/robmov.c.s
+src/sdk/robmov.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/src/sdk/robmov.c.s
+.PHONY : src/sdk/robmov.c.s
 
-src/sampleapp.o: src/sampleapp.c.o
-.PHONY : src/sampleapp.o
+src/sdk/sampleapp.o: src/sdk/sampleapp.c.o
+.PHONY : src/sdk/sampleapp.o
 
 # target to build an object file
-src/sampleapp.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/src/sampleapp.c.o
-.PHONY : src/sampleapp.c.o
+src/sdk/sampleapp.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/src/sdk/sampleapp.c.o
+.PHONY : src/sdk/sampleapp.c.o
 
-src/sampleapp.i: src/sampleapp.c.i
-.PHONY : src/sampleapp.i
+src/sdk/sampleapp.i: src/sdk/sampleapp.c.i
+.PHONY : src/sdk/sampleapp.i
 
 # target to preprocess a source file
-src/sampleapp.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/src/sampleapp.c.i
-.PHONY : src/sampleapp.c.i
+src/sdk/sampleapp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/src/sdk/sampleapp.c.i
+.PHONY : src/sdk/sampleapp.c.i
 
-src/sampleapp.s: src/sampleapp.c.s
-.PHONY : src/sampleapp.s
+src/sdk/sampleapp.s: src/sdk/sampleapp.c.s
+.PHONY : src/sdk/sampleapp.s
 
 # target to generate assembly for a file
-src/sampleapp.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/src/sampleapp.c.s
-.PHONY : src/sampleapp.c.s
+src/sdk/sampleapp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/octo.dir/build.make CMakeFiles/octo.dir/src/sdk/sampleapp.c.s
+.PHONY : src/sdk/sampleapp.c.s
 
 # Help Target
 help:
@@ -210,15 +210,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... octo"
-	@echo "... src/app.o"
-	@echo "... src/app.i"
-	@echo "... src/app.s"
-	@echo "... src/robmov.o"
-	@echo "... src/robmov.i"
-	@echo "... src/robmov.s"
-	@echo "... src/sampleapp.o"
-	@echo "... src/sampleapp.i"
-	@echo "... src/sampleapp.s"
+	@echo "... src/sdk/app.o"
+	@echo "... src/sdk/app.i"
+	@echo "... src/sdk/app.s"
+	@echo "... src/sdk/robmov.o"
+	@echo "... src/sdk/robmov.i"
+	@echo "... src/sdk/robmov.s"
+	@echo "... src/sdk/sampleapp.o"
+	@echo "... src/sdk/sampleapp.i"
+	@echo "... src/sdk/sampleapp.s"
 .PHONY : help
 
 

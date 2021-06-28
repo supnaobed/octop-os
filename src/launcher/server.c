@@ -7,27 +7,35 @@
 
 #define SIZE 1024
 
-void unic_file_name(char *filename){
-  time_t rawtime;
-  time (&rawtime);
-  sprintf(filename, "app %s", ctime(&rawtime));
-}
 
-void write_file(int sockfd){
+void run_comand(int sockfd){
   int n;
   FILE *fp;
-  char filename[40];
-  unic_file_name(filename);
   char buffer[SIZE];
-  fp = fopen(filename, "w");
   while (1) {
     n = recv(sockfd, buffer, SIZE, 0);
     if (n <= 0){
       break;
       return;
     }
-    fprintf(fp, "%s", buffer);
-    fclose(fp);
+    
+    int status;
+
+    // By calling fork(), a child process will be created as a exact duplicate of the calling process.
+    // Search for fork() (maybe "man fork" on Linux) for more information.
+    if(fork() == 0){ 
+        // Child process will return 0 from fork()
+        printf("I'm the child process.\n");
+        status = system(buffer);
+        printf("status %d is \n", status);
+        exit(0);
+    }else{
+        // Parent process will return a non-zero value from fork()
+        printf("I'm the parent.\n");
+    }
+
+    printf("This is my main program and it will continue running and doing anything i want to...\n");
+
     bzero(buffer, SIZE);
   }
   return;
@@ -36,7 +44,7 @@ void write_file(int sockfd){
 int main(){
 
   char *ip = "127.0.0.1";
-  int port = 8081;
+  int port = 8080;
   int e;
 
   int sockfd, new_sock;
@@ -55,8 +63,6 @@ int main(){
   server_addr.sin_port = port;
   server_addr.sin_addr.s_addr = inet_addr(ip);
 
-
-  
   e = bind(sockfd, (struct sockaddr*)&server_addr, sizeof(server_addr));
   if(e < 0) {
     perror("[-]Error in bind");
@@ -74,12 +80,10 @@ int main(){
 
     addr_size = sizeof(new_addr);
     new_sock = accept(sockfd, (struct sockaddr*)&new_addr, &addr_size);
-    write_file(new_sock);
+    run_comand(new_sock);
 
     printf("[+]Data written in the file successfully.\n");
   }
- 
-  
 
   return 0;
 }

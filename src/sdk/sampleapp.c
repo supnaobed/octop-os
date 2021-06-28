@@ -18,6 +18,6 @@ int lc_launch(struct App *a){
 }
 
 int lc_terminate(struct App *a){
-    printf("URAZA");
+    printf("URAZA\n");
     return 0;
 }

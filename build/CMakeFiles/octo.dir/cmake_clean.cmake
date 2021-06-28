@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/octo.dir/src/app.c.o"
-  "CMakeFiles/octo.dir/src/app.c.o.d"
-  "CMakeFiles/octo.dir/src/robmov.c.o"
-  "CMakeFiles/octo.dir/src/robmov.c.o.d"
-  "CMakeFiles/octo.dir/src/sampleapp.c.o"
-  "CMakeFiles/octo.dir/src/sampleapp.c.o.d"
+  "CMakeFiles/octo.dir/src/sdk/app.c.o"
+  "CMakeFiles/octo.dir/src/sdk/app.c.o.d"
+  "CMakeFiles/octo.dir/src/sdk/robmov.c.o"
+  "CMakeFiles/octo.dir/src/sdk/robmov.c.o.d"
+  "CMakeFiles/octo.dir/src/sdk/sampleapp.c.o"
+  "CMakeFiles/octo.dir/src/sdk/sampleapp.c.o.d"
   "octo"
   "octo.pdb"
 )

@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/ishmukhametov/Developer/octop-os/src/app.c" "CMakeFiles/octo.dir/src/app.c.o" "gcc" "CMakeFiles/octo.dir/src/app.c.o.d"
-  "/Users/ishmukhametov/Developer/octop-os/src/robmov.c" "CMakeFiles/octo.dir/src/robmov.c.o" "gcc" "CMakeFiles/octo.dir/src/robmov.c.o.d"
-  "/Users/ishmukhametov/Developer/octop-os/src/sampleapp.c" "CMakeFiles/octo.dir/src/sampleapp.c.o" "gcc" "CMakeFiles/octo.dir/src/sampleapp.c.o.d"
+  "/Users/ishmukhametov/Developer/octop-os/src/sdk/app.c" "CMakeFiles/octo.dir/src/sdk/app.c.o" "gcc" "CMakeFiles/octo.dir/src/sdk/app.c.o.d"
+  "/Users/ishmukhametov/Developer/octop-os/src/sdk/robmov.c" "CMakeFiles/octo.dir/src/sdk/robmov.c.o" "gcc" "CMakeFiles/octo.dir/src/sdk/robmov.c.o.d"
+  "/Users/ishmukhametov/Developer/octop-os/src/sdk/sampleapp.c" "CMakeFiles/octo.dir/src/sdk/sampleapp.c.o" "gcc" "CMakeFiles/octo.dir/src/sdk/sampleapp.c.o.d"
   )
 
 # Targets to which this target links.

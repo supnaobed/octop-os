@@ -69,60 +69,60 @@ include CMakeFiles/octo.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/octo.dir/flags.make
 
-CMakeFiles/octo.dir/src/app.c.o: CMakeFiles/octo.dir/flags.make
-CMakeFiles/octo.dir/src/app.c.o: ../src/app.c
-CMakeFiles/octo.dir/src/app.c.o: CMakeFiles/octo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ishmukhametov/Developer/octop-os/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/octo.dir/src/app.c.o"
-	/Applications/Xcode.app/Contents/Developer/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/octo.dir/src/app.c.o -MF CMakeFiles/octo.dir/src/app.c.o.d -o CMakeFiles/octo.dir/src/app.c.o -c /Users/ishmukhametov/Developer/octop-os/src/app.c
+CMakeFiles/octo.dir/src/sdk/app.c.o: CMakeFiles/octo.dir/flags.make
+CMakeFiles/octo.dir/src/sdk/app.c.o: ../src/sdk/app.c
+CMakeFiles/octo.dir/src/sdk/app.c.o: CMakeFiles/octo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ishmukhametov/Developer/octop-os/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/octo.dir/src/sdk/app.c.o"
+	/Applications/Xcode.app/Contents/Developer/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/octo.dir/src/sdk/app.c.o -MF CMakeFiles/octo.dir/src/sdk/app.c.o.d -o CMakeFiles/octo.dir/src/sdk/app.c.o -c /Users/ishmukhametov/Developer/octop-os/src/sdk/app.c
 
-CMakeFiles/octo.dir/src/app.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/octo.dir/src/app.c.i"
-	/Applications/Xcode.app/Contents/Developer/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ishmukhametov/Developer/octop-os/src/app.c > CMakeFiles/octo.dir/src/app.c.i
+CMakeFiles/octo.dir/src/sdk/app.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/octo.dir/src/sdk/app.c.i"
+	/Applications/Xcode.app/Contents/Developer/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ishmukhametov/Developer/octop-os/src/sdk/app.c > CMakeFiles/octo.dir/src/sdk/app.c.i
 
-CMakeFiles/octo.dir/src/app.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/octo.dir/src/app.c.s"
-	/Applications/Xcode.app/Contents/Developer/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ishmukhametov/Developer/octop-os/src/app.c -o CMakeFiles/octo.dir/src/app.c.s
+CMakeFiles/octo.dir/src/sdk/app.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/octo.dir/src/sdk/app.c.s"
+	/Applications/Xcode.app/Contents/Developer/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ishmukhametov/Developer/octop-os/src/sdk/app.c -o CMakeFiles/octo.dir/src/sdk/app.c.s
 
-CMakeFiles/octo.dir/src/sampleapp.c.o: CMakeFiles/octo.dir/flags.make
-CMakeFiles/octo.dir/src/sampleapp.c.o: ../src/sampleapp.c
-CMakeFiles/octo.dir/src/sampleapp.c.o: CMakeFiles/octo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ishmukhametov/Developer/octop-os/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/octo.dir/src/sampleapp.c.o"
-	/Applications/Xcode.app/Contents/Developer/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/octo.dir/src/sampleapp.c.o -MF CMakeFiles/octo.dir/src/sampleapp.c.o.d -o CMakeFiles/octo.dir/src/sampleapp.c.o -c /Users/ishmukhametov/Developer/octop-os/src/sampleapp.c
+CMakeFiles/octo.dir/src/sdk/sampleapp.c.o: CMakeFiles/octo.dir/flags.make
+CMakeFiles/octo.dir/src/sdk/sampleapp.c.o: ../src/sdk/sampleapp.c
+CMakeFiles/octo.dir/src/sdk/sampleapp.c.o: CMakeFiles/octo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ishmukhametov/Developer/octop-os/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/octo.dir/src/sdk/sampleapp.c.o"
+	/Applications/Xcode.app/Contents/Developer/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/octo.dir/src/sdk/sampleapp.c.o -MF CMakeFiles/octo.dir/src/sdk/sampleapp.c.o.d -o CMakeFiles/octo.dir/src/sdk/sampleapp.c.o -c /Users/ishmukhametov/Developer/octop-os/src/sdk/sampleapp.c
 
-CMakeFiles/octo.dir/src/sampleapp.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/octo.dir/src/sampleapp.c.i"
-	/Applications/Xcode.app/Contents/Developer/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ishmukhametov/Developer/octop-os/src/sampleapp.c > CMakeFiles/octo.dir/src/sampleapp.c.i
+CMakeFiles/octo.dir/src/sdk/sampleapp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/octo.dir/src/sdk/sampleapp.c.i"
+	/Applications/Xcode.app/Contents/Developer/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ishmukhametov/Developer/octop-os/src/sdk/sampleapp.c > CMakeFiles/octo.dir/src/sdk/sampleapp.c.i
 
-CMakeFiles/octo.dir/src/sampleapp.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/octo.dir/src/sampleapp.c.s"
-	/Applications/Xcode.app/Contents/Developer/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ishmukhametov/Developer/octop-os/src/sampleapp.c -o CMakeFiles/octo.dir/src/sampleapp.c.s
+CMakeFiles/octo.dir/src/sdk/sampleapp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/octo.dir/src/sdk/sampleapp.c.s"
+	/Applications/Xcode.app/Contents/Developer/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ishmukhametov/Developer/octop-os/src/sdk/sampleapp.c -o CMakeFiles/octo.dir/src/sdk/sampleapp.c.s
 
-CMakeFiles/octo.dir/src/robmov.c.o: CMakeFiles/octo.dir/flags.make
-CMakeFiles/octo.dir/src/robmov.c.o: ../src/robmov.c
-CMakeFiles/octo.dir/src/robmov.c.o: CMakeFiles/octo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ishmukhametov/Developer/octop-os/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/octo.dir/src/robmov.c.o"
-	/Applications/Xcode.app/Contents/Developer/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/octo.dir/src/robmov.c.o -MF CMakeFiles/octo.dir/src/robmov.c.o.d -o CMakeFiles/octo.dir/src/robmov.c.o -c /Users/ishmukhametov/Developer/octop-os/src/robmov.c
+CMakeFiles/octo.dir/src/sdk/robmov.c.o: CMakeFiles/octo.dir/flags.make
+CMakeFiles/octo.dir/src/sdk/robmov.c.o: ../src/sdk/robmov.c
+CMakeFiles/octo.dir/src/sdk/robmov.c.o: CMakeFiles/octo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ishmukhametov/Developer/octop-os/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/octo.dir/src/sdk/robmov.c.o"
+	/Applications/Xcode.app/Contents/Developer/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/octo.dir/src/sdk/robmov.c.o -MF CMakeFiles/octo.dir/src/sdk/robmov.c.o.d -o CMakeFiles/octo.dir/src/sdk/robmov.c.o -c /Users/ishmukhametov/Developer/octop-os/src/sdk/robmov.c
 
-CMakeFiles/octo.dir/src/robmov.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/octo.dir/src/robmov.c.i"
-	/Applications/Xcode.app/Contents/Developer/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ishmukhametov/Developer/octop-os/src/robmov.c > CMakeFiles/octo.dir/src/robmov.c.i
+CMakeFiles/octo.dir/src/sdk/robmov.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/octo.dir/src/sdk/robmov.c.i"
+	/Applications/Xcode.app/Contents/Developer/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ishmukhametov/Developer/octop-os/src/sdk/robmov.c > CMakeFiles/octo.dir/src/sdk/robmov.c.i
 
-CMakeFiles/octo.dir/src/robmov.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/octo.dir/src/robmov.c.s"
-	/Applications/Xcode.app/Contents/Developer/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ishmukhametov/Developer/octop-os/src/robmov.c -o CMakeFiles/octo.dir/src/robmov.c.s
+CMakeFiles/octo.dir/src/sdk/robmov.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/octo.dir/src/sdk/robmov.c.s"
+	/Applications/Xcode.app/Contents/Developer/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ishmukhametov/Developer/octop-os/src/sdk/robmov.c -o CMakeFiles/octo.dir/src/sdk/robmov.c.s
 
 # Object files for target octo
 octo_OBJECTS = \
-"CMakeFiles/octo.dir/src/app.c.o" \
-"CMakeFiles/octo.dir/src/sampleapp.c.o" \
-"CMakeFiles/octo.dir/src/robmov.c.o"
+"CMakeFiles/octo.dir/src/sdk/app.c.o" \
+"CMakeFiles/octo.dir/src/sdk/sampleapp.c.o" \
+"CMakeFiles/octo.dir/src/sdk/robmov.c.o"
 
 # External object files for target octo
 octo_EXTERNAL_OBJECTS =
 
-octo: CMakeFiles/octo.dir/src/app.c.o
-octo: CMakeFiles/octo.dir/src/sampleapp.c.o
-octo: CMakeFiles/octo.dir/src/robmov.c.o
+octo: CMakeFiles/octo.dir/src/sdk/app.c.o
+octo: CMakeFiles/octo.dir/src/sdk/sampleapp.c.o
+octo: CMakeFiles/octo.dir/src/sdk/robmov.c.o
 octo: CMakeFiles/octo.dir/build.make
 octo: CMakeFiles/octo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ishmukhametov/Developer/octop-os/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable octo"
