@@ -5,6 +5,11 @@
         "typeinfo": "c",
         "locale": "c",
         "numbers": "c",
-        "unistd.h": "c"
+        "unistd.h": "c",
+        "sstream": "c",
+        "string.h": "c",
+        "random": "c",
+        "types.h": "c",
+        "ipc.h": "c"
     }
 }
