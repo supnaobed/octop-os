@@ -21,7 +21,7 @@ int main(void)
     int len;
     key_t key;
 
-    key = ftok("progfile", 65);
+    key = ftok("progfile1", 67);
 
     if ((msqid = msgget(key, PERMS | IPC_CREAT)) == -1)
     {

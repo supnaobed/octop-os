@@ -10,6 +10,9 @@
         "string.h": "c",
         "random": "c",
         "types.h": "c",
-        "ipc.h": "c"
+        "ipc.h": "c",
+        "stdio.h": "c",
+        "limits.h": "c",
+        "__config": "c"
     }
 }

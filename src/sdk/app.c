@@ -14,15 +14,17 @@
 #include <string.h>
 
 #define BUFSIZE 8
+#define PERMS 0644
+#define CMND_TERM "0"
 
-int read_args(struct App *a);
+struct my_msgbuf
+{
+    long mtype;
+    char mtext[200];
+};
+
 int observe_lc(struct App *a);
 
-int run(struct App *a)
-{
-    observe_lc(a);
-    return 0;
-}
 
 enum AppState launch(enum AppState current_state)
 {
@@ -33,44 +35,17 @@ enum AppState launch(enum AppState current_state)
     return current_state;
 }
 
-int read_args(struct App *a)
+int run(struct App *a)
 {
-    FILE *fp = fopen("lifecycle", "r");
-
-    char buff[BUFSIZE];
-    while (fgets(buff, BUFSIZE - 1, fp) != NULL)
-    {
-        if (strcmp(buff, "1") == 0)
-        {
-            if (a->state == TERMINATED)
-            {
-                a->state = launch(a->state);
-                lc_launch(a);
-            }
-        }
-        if (strcmp(buff, "2") == 0)
-        {
-            if (a->state != TERMINATED)
-            {
-                lc_terminate(a);
-                a->state = TERMINATED;
-                exit(1);
-            }
-        }
+    while (1) {
+        printf("alife\n");
+        sleep(3);
     }
-    fclose(fp);
+    // a->state = launch(a->state);
+    // lc_launch(a);
+    // observe_lc(a);
     return 0;
 }
-
-#define PERMS 0644
-#define CMND_LAUNCH "1"
-#define CMND_TERM "0"
-
-struct my_msgbuf
-{
-    long mtype;
-    char mtext[200];
-};
 
 int observe_lc(struct App *a)
 {
@@ -79,42 +54,29 @@ int observe_lc(struct App *a)
     int toend;
     key_t key;
 
-    key = ftok("progfile", 65);
+    key = ftok("progfile", 94);
 
     if ((msqid = msgget(key, PERMS)) == -1)
-    { /* connect to the queue */
-        perror("msgget");
+    { 
+        perror("[-]App start msqid error");
         exit(1);
     }
-    printf("message queue: ready to receive messages.\n");
-
     for (;;)
     {
         if (msgrcv(msqid, &buf, sizeof(buf.mtext), 0, 0) == -1)
         {
-            perror("msgrcv");
+            perror("[-]App lc error");
             exit(1);
         }
-        printf("recvd: \"%s\"\n", buf.mtext);
-        if (strcmp(buf.mtext, CMND_LAUNCH) == 0)
-        {
-            if (a->state == TERMINATED)
-            {
-                a->state = launch(a->state);
-                lc_launch(a);
-            }
-        }
-
         if (strcmp(buf.mtext, CMND_TERM) == 0)
         {
             if (a->state != TERMINATED)
             {
                 lc_terminate(a);
                 a->state = TERMINATED;
-                exit(1);
+                return 0;
             }
         }
     }
-    printf("message queue: done receiving messages.\n");
     return 0;
 }
