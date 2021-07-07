@@ -10,6 +10,10 @@
         "string.h": "c",
         "random": "c",
         "types.h": "c",
-        "ipc.h": "c"
+        "ipc.h": "c",
+        "libinstall.h": "c",
+        "strings.h": "c",
+        "stat.h": "c",
+        "robmov.h": "c"
     }
 }

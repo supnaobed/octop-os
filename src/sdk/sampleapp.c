@@ -1,9 +1,18 @@
 #include <stdio.h>
 #include "app.h"
 #include "robmov.h"
+#include "../installer/client/libinstall.h"
 
 
 int main(){
+    puts("main");
+    Config config = {
+        "/home/rz/apps",
+        "/home/rz/tmp"
+    }; 
+    int status;
+    status = install("/home/rz/test.zip", &config);
+    printf("install %d", status);
     struct Robot r = { "batyr"};
     struct App app = { "matur", &r, TERMINATED};
     run(&app);
