@@ -37,13 +37,10 @@ enum AppState launch(enum AppState current_state)
 
 int run(struct App *a)
 {
-    while (1) {
-        printf("alife\n");
-        sleep(3);
-    }
-    // a->state = launch(a->state);
-    // lc_launch(a);
-    // observe_lc(a);
+    printf("[+](App %s) start\n", a -> name);
+    a->state = launch(a->state);
+    lc_launch(a);
+    observe_lc(a);
     return 0;
 }
 
@@ -54,18 +51,20 @@ int observe_lc(struct App *a)
     int toend;
     key_t key;
 
-    key = ftok("progfile", 94);
+    key = ftok(a->name, 0);
 
     if ((msqid = msgget(key, PERMS)) == -1)
     { 
-        perror("[-]App start msqid error");
+        printf("[-](App %s)", a->name);
+        perror("start msqid error");
         exit(1);
     }
     for (;;)
     {
         if (msgrcv(msqid, &buf, sizeof(buf.mtext), 0, 0) == -1)
         {
-            perror("[-]App lc error");
+            printf("[-](App %s)", a->name);
+            perror("msqid msgrcv error");
             exit(1);
         }
         if (strcmp(buf.mtext, CMND_TERM) == 0)
