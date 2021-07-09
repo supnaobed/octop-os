@@ -13,7 +13,7 @@
 #define PERMS 0644
 #define CMND_LAUNCH "1"
 #define CMND_TERM "0"
-#define MAX_SIZE 100
+#define MAX_SIZE 200
 
 typedef struct my_msgbuf
 {
@@ -22,7 +22,7 @@ typedef struct my_msgbuf
 } message;
 
 int launch(char *app_name);
-int send_app_msg(char *app_name, message m);
+int send_app_msg(char *app_name, message m, int pid);
 
 int main()
 {
@@ -31,92 +31,87 @@ int main()
     int toend;
     key_t key;
 
-    system("touch porcmng.ipc");
+    if ((key = ftok("procmng.ipc", 65)) == -1)
+    {
+        perror("ftok");
+        exit(1);
+    }
 
-    if ((key = ftok("porcmng.ipc", 65)) == -1) {
-      perror("ftok");
-      exit(1);
-   }
-
-    if ((msqid = msgget(key, PERMS)) == -1) {
+    if ((msqid = msgget(key, PERMS)) == -1)
+    {
         perror("[-](Process manager) queue error");
         exit(1);
     }
+    if (msgrcv(msqid, &buf, sizeof(buf.mtext), 0, 0) == -1)
+    {
+        perror("[-](Process manager) listern lifecycle error\n");
+        exit(1);
+    }
     printf("[+](Process manager) started\n");
+    char *app_name = "";
+    int pid_app;
+    int msqid_app = 0;
     for (;;)
     {
         if (msgrcv(msqid, &buf, sizeof(buf.mtext), 0, 0) == -1)
         {
-            perror("[-](Process manager) enqueue error\n");
+            perror("[-](Process manager) listern lifecycle error\n");
             exit(1);
         }
-        if (strcmp(buf.mtext, CMND_TERM) == 0)
+        if (strcmp(buf.mtext, CMND_TERM) == 0 && msqid_app != 0 && strcmp(app_name, "") != 0)
         {
+
+            message m;
+            m.mtype = 23;
+            strcpy(m.mtext, "0");
+            send_app_msg(app_name, m, msqid_app);
+            sleep(3);
+            printf("[+](Process manager)[APP %d]close app\n", pid_app);
+            kill(pid_app, SIGKILL);
             continue;
         }
 
-        int p = fork();
-        if (p < 0)
+        else
         {
-            printf("[-](Process manager) fork error\n");
-            exit(1);
-        }
-        else if (p == 0)
-        {
-            char *app_name = buf.mtext;
-            int pid_app = fork();
-            if (pid_app == 0)
+            app_name = buf.mtext;
+            int p = fork();
+            if (p == 0)
             {
+                int app_id = getpid();
+                printf("[+](Child manager) start new app %d\n", app_id);
                 int status = launch(app_name);
-                if (status < 0){
+
+                if (status < 0)
+                {
                     printf("[-](Process manager) launch error\n");
-                    kill(pid_app, SIGKILL);
+                    kill(app_id, SIGKILL);
                     continue;
-                } 
+                }
             }
             else
             {
-                for (;;)
+                key_t key;
+                key = ftok(app_name, p);
+                if ((msqid_app = msgget(key, IPC_CREAT | 0666)) < 0)
                 {
-                    if (msgrcv(msqid, &buf, sizeof(buf.mtext), 0, 0) == -1)
-                    {
-                        printf("[-](Process manager)[APP %d]listern lifecycle error\n", pid_app);
-                        perror("[-](Process manager) listern lifecycle error\n");
-                        exit(1);
-                    }
-                    if (strcmp(buf.mtext, CMND_TERM) == 0)
-                    {
-
-                        message m;
-                        m.mtype = 1;
-                        strcpy(m.mtext, "0");
-                        send_app_msg(app_name, m);
-
-                        printf("[+](Process manager)[APP %d]close app\n", pid_app);
-                        kill(pid_app, SIGKILL);
-                        continue;
-                    }
+                    perror("[-](Process manager)");
+                    exit(1);
                 }
+                pid_app = p;
+                printf("[+](Process manager) start new app %d\n", p);
             }
-        }
-        else
-        {
-            printf("[+](Process manager) start new app %d\n", getpid());
         }
     }
 }
 
-int send_app_msg(char *app_name, message m)
+int send_app_msg(char *app_name, message m, int msqid)
 {
-    key_t key;
-    int msgid;
-
-    system(app_name);
-
-    key = ftok(app_name, 0);
-    msgid = msgget(key, PERMS | IPC_CREAT);
-    fgets(m.mtext, MAX_SIZE ,stdin);  
-    int status = msgsnd(msgid, &m, sizeof(message), 0);  
+    int status;
+    if ((status = msgsnd(msqid, &m, sizeof(long) + (strlen(m.mtext) * sizeof(char)) + 1, IPC_NOWAIT)) < 0)
+    {
+        perror("[-](Process manager)");
+        exit(1);
+    }
     return status;
 }
 

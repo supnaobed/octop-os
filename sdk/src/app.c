@@ -13,14 +13,14 @@
 #include <sys/msg.h>
 #include <string.h>
 
-#define BUFSIZE 8
+#define BUFSIZE 20
 #define PERMS 0644
 #define CMND_TERM "0"
 
 struct my_msgbuf
 {
     long mtype;
-    char mtext[200];
+    char mtext[BUFSIZE];
 };
 
 int observe_lc(struct App *a);
@@ -37,7 +37,7 @@ enum AppState launch(enum AppState current_state)
 
 int run(struct App *a)
 {
-    printf("[+](App %s) start\n", a -> name);
+    printf("[+](App %d) start\n", getpid());
     a->state = launch(a->state);
     lc_launch(a);
     observe_lc(a);
@@ -51,7 +51,7 @@ int observe_lc(struct App *a)
     int toend;
     key_t key;
 
-    key = ftok(a->name, 0);
+    key = ftok(a->name, getpid());
 
     if ((msqid = msgget(key, PERMS)) == -1)
     { 
@@ -72,6 +72,7 @@ int observe_lc(struct App *a)
             if (a->state != TERMINATED)
             {
                 lc_terminate(a);
+                msgctl(msqid, IPC_RMID, NULL);
                 a->state = TERMINATED;
                 return 0;
             }

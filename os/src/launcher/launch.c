@@ -21,7 +21,9 @@ int main(void)
     int len;
     key_t key;
 
-    key = ftok("porcmng.ipc", 65);
+    system("rm -rf procmng.ipc");
+    system("touch procmng.ipc");
+    key = ftok("procmng.ipc", 65);
 
     if ((msqid = msgget(key, PERMS | IPC_CREAT)) == -1)
     {
