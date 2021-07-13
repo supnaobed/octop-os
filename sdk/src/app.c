@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include "app.h"
+#include "static/app.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,6 +12,7 @@
 #include <sys/ipc.h>
 #include <sys/msg.h>
 #include <string.h>
+#include <pthread.h>
 
 #define BUFSIZE 20
 #define PERMS 0644
@@ -23,7 +24,7 @@ struct my_msgbuf
     char mtext[BUFSIZE];
 };
 
-int observe_lc(struct App *a);
+void * observe_lc(void *input);
 
 
 enum AppState launch(enum AppState current_state)
@@ -37,15 +38,29 @@ enum AppState launch(enum AppState current_state)
 
 int run(struct App *a)
 {
-    printf("[+](App %d) start\n", getpid());
+    printf("[+](App %d) start\n", 0);
     a->state = launch(a->state);
     lc_launch(a);
-    observe_lc(a);
+
+    pthread_t thread_id;
+    printf("Before Thread\n");
+    pthread_create(&thread_id, NULL, observe_lc, (void *)a);
+    while (1)
+    {
+        printf("await\n");
+        sleep(3);
+    }
+    
+    pthread_join(thread_id, NULL);
+    printf("After Thread\n");
     return 0;
 }
 
-int observe_lc(struct App *a)
+void * observe_lc(void *input)
 {
+    
+    struct App * a;
+    a = ((struct App*)input);
     struct my_msgbuf buf;
     int msqid;
     int toend;
@@ -78,5 +93,12 @@ int observe_lc(struct App *a)
             }
         }
     }
+}
+
+int lc_launch(struct App * a){
+    return 0;
+}
+
+int lc_terminate(struct App * a){
     return 0;
 }

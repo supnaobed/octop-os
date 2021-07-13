@@ -25,7 +25,7 @@ int main(void)
     system("touch procmng.ipc");
     key = ftok("procmng.ipc", 65);
 
-    if ((msqid = msgget(key, PERMS | IPC_CREAT)) == -1)
+    if ((msqid = msgget(key, PERMS | IPC_EXCL | IPC_CREAT)) == -1)
     {
         perror("msgget");
         exit(1);

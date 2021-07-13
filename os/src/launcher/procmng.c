@@ -74,6 +74,13 @@ int main()
         else
         {
             app_name = buf.mtext;
+            key_t key;
+            key = ftok(app_name, 0);
+            if ((msqid_app = msgget(key, IPC_CREAT | 0666)) < 0)
+            {
+                perror("[-](Process manager)");
+                exit(1);
+            }
             int p = fork();
             if (p == 0)
             {
@@ -90,13 +97,6 @@ int main()
             }
             else
             {
-                key_t key;
-                key = ftok(app_name, p);
-                if ((msqid_app = msgget(key, IPC_CREAT | 0666)) < 0)
-                {
-                    perror("[-](Process manager)");
-                    exit(1);
-                }
                 pid_app = p;
                 printf("[+](Process manager) start new app %d\n", p);
             }
