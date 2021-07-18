@@ -2,6 +2,6 @@
 #ifndef UNPACK_H
 #define UNPACK_H
 
-int unpack(char *pack_path, char *destination_path);
+int unpack(const char *pack_path,  const char *destination_path);
 
 #endif /* UNPACK_H */

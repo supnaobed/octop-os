@@ -5,7 +5,7 @@
 #include "unpack.h"
 
 /* TODO Native realization */
-int unpack(char *pack_path, char *destination_path)
+int unpack(const char *pack_path, const char *destination_path)
 {
     size_t pack_len = strlen(pack_path);
     size_t destination_len = strlen(destination_path);
@@ -13,7 +13,7 @@ int unpack(char *pack_path, char *destination_path)
     {
         return -1;
     }
-    char command[PATH_MAX * 2 + 10] = "unzip ";
+    char command[PATH_MAX * 2 + 16] = "unzip -o -q ";
     strcat(command, pack_path);
     strcat(command, " -d ");
     strcat(command, destination_path);
