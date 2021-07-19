@@ -1,4 +1,4 @@
-#include "robmov.h"
+#include "include/static/robmov.h"
 #include <stdio.h>
 
 int move_forward(struct Robot * r){

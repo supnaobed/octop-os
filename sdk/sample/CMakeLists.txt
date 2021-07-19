@@ -1,18 +1,16 @@
 cmake_minimum_required(VERSION 3.5)
 project (sample)
 
-find_library(libhello libhello.dylib)
-message(STATUS ${libhello})
+find_library(libocto libocto.dylib)
+message(STATUS ${libocto})
 
 include_directories(/usr/local/include)
 
-add_executable(hello_binary 
+add_executable(sample 
     sampleapp.c
 )
 
-
-# link the new hello_library target with the hello_binary target
-target_link_libraries( hello_binary
+target_link_libraries(sample
     PRIVATE 
-        ${libhello}
+        ${libocto}
 )

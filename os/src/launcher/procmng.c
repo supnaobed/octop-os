@@ -120,6 +120,10 @@ int launch(char *app_name)
     char app_path[30];
     strcpy(app_path, APPS_PATH);
     strcat(app_path, app_name);
+    strcat(app_path, "/");
+    strcat(app_path, app_name);
+    // strcat(app_path, ".app");
+    printf("%s", app_path);
     char *argv_list[] = {NULL};
     int status = execv(app_path, argv_list);
     return status;

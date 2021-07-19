@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include "static/app.h"
+#include "include/static/app.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,7 +26,6 @@ struct my_msgbuf
 
 void * observe_lc(void *input);
 
-
 enum AppState launch(enum AppState current_state)
 {
     if (current_state == TERMINATED)
@@ -40,8 +39,7 @@ int run(struct App *a)
 {
     printf("[+](App %d) start\n", 0);
     a->state = launch(a->state);
-    lc_launch(a);
-
+    ((void(*)())a->lc_launch)((void *)a);
     pthread_t thread_id;
     printf("Before Thread\n");
     pthread_create(&thread_id, NULL, observe_lc, (void *)a);
@@ -86,19 +84,11 @@ void * observe_lc(void *input)
         {
             if (a->state != TERMINATED)
             {
-                lc_terminate(a);
+                ((void(*)())a->lc_terminate)((void *)a);
                 msgctl(msqid, IPC_RMID, NULL);
                 a->state = TERMINATED;
                 return 0;
             }
         }
     }
-}
-
-int lc_launch(struct App * a){
-    return 0;
-}
-
-int lc_terminate(struct App * a){
-    return 0;
 }

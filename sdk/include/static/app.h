@@ -12,11 +12,9 @@ struct App {
     char *name;
     struct Robot *robot;
     enum AppState state;
+    void *lc_launch;
+    void *lc_terminate;
 };
-
-int lc_launch(struct App * a);
-
-int lc_terminate(struct App * a);
 
 int run(struct App * a);
 
