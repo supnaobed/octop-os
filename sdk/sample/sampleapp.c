@@ -1,5 +1,6 @@
 #include "static/robmov.h"
 #include "static/app.h"
+#include <unistd.h>
 #include <stdio.h>
 
 void lc_launch(void * input);
@@ -22,10 +23,9 @@ void lc_launch(void * input){
     struct App * a;
     a = ((struct App*)input);
 
-    move_letf(a->robot);
-    move_forward(a->robot);
-    move_right(a->robot);
-    move_backward(a->robot);
+    move(a->robot);
+    sleep(3);
+    stop(a->robot);
 }
 
 void lc_terminate(void * input){

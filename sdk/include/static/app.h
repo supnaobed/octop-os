@@ -1,6 +1,6 @@
 #ifndef APP_H
 #define APP_H
-#include "robmov.h"
+#include "static/robmov.h"
 
 enum AppState {
     TERMINATED,
