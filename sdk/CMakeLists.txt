@@ -1,8 +1,9 @@
 cmake_minimum_required(VERSION 3.9)
 
+
 project(octo VERSION 1.0.1 DESCRIPTION "sdk")
 
-find_library(liboctomov liboctomov.dylib)
+
 message(STATUS ${libocto})
 include_directories(/usr/local/include)
 
@@ -23,7 +24,9 @@ install(TARGETS octo
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
-INSTALL (
+INSTALL (set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package(Threads REQUIRED)
+target_link_libraries(my_app PRIVATE Threads::Threads)
     DIRECTORY ${CMAKE_SOURCE_DIR}/include/
     DESTINATION include
     FILES_MATCHING PATTERN "*.h*")

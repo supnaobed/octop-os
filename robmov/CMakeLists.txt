@@ -2,9 +2,14 @@ cmake_minimum_required(VERSION 3.9)
 
 project(octomov VERSION 1.0.1 DESCRIPTION "robmov")
 
-add_library(octomov SHARED src/robmov.c)
+add_library(octomov SHARED 
+src/robmov.c  
+src/robmov1.cpp
+src/iarduino_I2C_Motor.cpp
+)
 
 set(PUBLIC_HEADERS
+    include/static/robmov1.h
     include/static/robmov.h
 )
 

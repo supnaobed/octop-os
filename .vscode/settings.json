@@ -18,6 +18,7 @@
         "robmov.h": "c",
         "app.h": "c",
         "*.a": "c",
-        "hello.h": "c"
+        "hello.h": "c",
+        "chrono": "cpp"
     }
 }
