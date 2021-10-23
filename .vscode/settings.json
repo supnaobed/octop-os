@@ -19,6 +19,9 @@
         "app.h": "c",
         "*.a": "c",
         "hello.h": "c",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "timer.h": "c",
+        "messagequeue.h": "c",
+        "message.h": "c"
     }
 }
