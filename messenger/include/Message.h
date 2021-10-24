@@ -1,3 +1,5 @@
+#ifndef MESSAGE
+#define MESSAGE
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
@@ -10,5 +12,6 @@ typedef struct Message {
 } Message;
 
 void clearMessage(Message* msg);
-void setMessage(Message* msg, char* buffer, int len, int mtype);
+void setMessage(Message* msg, char* buffer, int len, long mtype);
 const char* messageToString(Message* msg);
+#endif

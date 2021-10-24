@@ -6,4 +6,7 @@ int start(struct App * app);
 
 int stop(struct App * app);
 
+int execute(struct App * app);
+
+
 #endif

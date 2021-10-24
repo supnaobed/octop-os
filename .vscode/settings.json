@@ -22,6 +22,17 @@
         "chrono": "cpp",
         "timer.h": "c",
         "messagequeue.h": "c",
-        "message.h": "c"
+        "message.h": "c",
+        "appdelegate.h": "c",
+        "ios": "c",
+        "stdlib.h": "c",
+        "system_error": "c",
+        "semaphore.h": "c",
+        "__bit_reference": "c",
+        "__split_buffer": "c",
+        "vector": "c",
+        "messagereceiver.h": "c",
+        "queue.h": "c",
+        "queue": "c"
     }
 }

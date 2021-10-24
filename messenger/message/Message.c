@@ -1,4 +1,5 @@
 #include "../include/Message.h"
+#include <uuid/uuid.h>
 
 void clearMessage(Message* msg)
 {
@@ -7,7 +8,7 @@ void clearMessage(Message* msg)
 	msg->mtype = 0;
 }
 
-void setMessage(Message* msg, char* buffer, int len, int mtype)
+void setMessage(Message* msg, char* buffer, int len, long mtype)
 {	
 	assert(len <= MESSAGE_SIZE);
 	memcpy(msg->buffer, buffer, len);

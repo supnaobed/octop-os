@@ -13,6 +13,7 @@ set(PUBLIC_HEADERS
 
 SET(PUBLIC_SOURCES_FILES
 	"src/App.c"
+    "src/AppLifecycle.c"
 )
 
 

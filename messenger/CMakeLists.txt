@@ -5,11 +5,15 @@ project(messenger VERSION 1.0.1 DESCRIPTION "messenger")
 set(PUBLIC_HEADERS
 	"include/Message.h"
     "include/MessageQueue.h"
+    "include/Queue.h"
+    "include/MessageReceiver.h"
 )
 
 SET(PUBLIC_SOURCES_FILES
     "message/Message.c"
     "queue/MessageQueue.c"
+    "queue/Queue.c"
+    "queue/MessageReceiver.c"
 )
 
 ADD_LIBRARY (

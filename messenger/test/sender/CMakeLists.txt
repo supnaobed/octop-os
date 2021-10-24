@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 
 project(sender)
 
-find_library(libmessenger libmessenger.dylib)
+find_library(libmessenger libmessenger.a)
 message(STATUS ${libmessenger})
 
 include_directories(/usr/local/include/)

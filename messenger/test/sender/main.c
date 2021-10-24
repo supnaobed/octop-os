@@ -2,11 +2,12 @@
 #include <sys/syscall.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 int main()
 {
 	int i;
-	int key = 10;
+	int key = 100;
 	int qid;
 	struct Message msg, msg2;
 	char buffer[MESSAGE_SIZE];
@@ -29,17 +30,11 @@ int main()
 	/* Create messages: */
 	printf("creating message\n%s\n", messageToString(&msg));
 	clearMessage(&msg);
-	printf("clearing message\n%s\n", messageToString(&msg));
-
 	setMessage(&msg, buffer, MESSAGE_SIZE, mtype);
+	printf("clearing message\n%s\n", messageToString(&msg));
 	printf("Making message with buffer:\n%s\n\n", buffer);
 
 	
-	/* Send message: */
-	ret = messageQueueSend(qid, &msg);
-	printf("Sending message returned %d\n", ret);
-	printf("Sent message: %s\n", messageToString(&msg));
-
 	/* Send message: */
 	ret = messageQueueSend(qid, &msg);
 	printf("Sending message returned %d\n", ret);
