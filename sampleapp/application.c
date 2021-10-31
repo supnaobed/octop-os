@@ -1,10 +1,16 @@
 #include "AppDelegate.h"
 #include "App.h"
 #include <stdio.h>
-
+#include <unistd.h>
 
 int start(struct App * app){
    printf("start\n");
+   int i = 0;
+   while (1) {
+      printf("update %d\n", i);
+      sleep(5);
+      i++;
+   }
    return 0;
 }
 
