@@ -2,15 +2,22 @@
 #include "App.h"
 #include <stdio.h>
 #include <unistd.h>
+#include <pthread.h>
 
-int start(struct App * app){
-   printf("start\n");
+void *hard_work(void *vargp){
    int i = 0;
    while (1) {
-      printf("update %d\n", i);
-      sleep(5);
+      printf("update %d\n", i*10);
+      sleep(10);
       i++;
    }
+}
+
+
+int start(struct App * app){
+   printf("start %d\n", getpid());
+   pthread_t thread_id;
+   pthread_create(&thread_id, NULL, hard_work, NULL);
    return 0;
 }
 

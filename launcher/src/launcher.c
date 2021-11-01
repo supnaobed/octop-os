@@ -3,9 +3,10 @@
 #include <string.h>
 #include <signal.h>
 #include <unistd.h>
-#include "include/cmd.h"
-#include "include/proc.h"
-#include "include/util.h"
+#include "../include/cmd.h"
+#include "../include/proc.h"
+#include "../include/util.h"
+#include "../include/sender.h"
 
 #define MAX_PROC_COUNT 5
 
@@ -59,6 +60,7 @@ int start_p(char * package_id){
     printf("start %d\n", p);
     procs[proc_num] = proc;
     proc_num++;
+    int ret = sendmsg(proc, "start");
     return p;
 } 
 
@@ -84,7 +86,9 @@ int resume_p(char * package_id) {
     procs[index].state = STRESUMED;
     Proc proc = procs[index];
     kill(proc.pid, SIGCONT);
-    return 1;
+    int ret = sendmsg(proc, "resume");
+    printf("send result %d", ret);
+    return ret;
 }
 
 int stop_p(char * package_id){

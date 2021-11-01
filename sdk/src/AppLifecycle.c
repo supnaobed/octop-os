@@ -44,7 +44,8 @@ int runThreads(){
     messageReceiver.shared = messanger_sem;
     messageReceiver.shared = MESSANGER_SHARED;
     messageReceiver.queue = queue;
-
+    messageReceiver.key = getpid();
+    printf("messageReceiver %d\n", messageReceiver.key);
     sem_init(&messanger_sem, MESSANGER_SHARED, 1);
     pthread_create(&main_thread_id, NULL, MainLifecycle, NULL);
     createReceiverThread(&messageReceiver);

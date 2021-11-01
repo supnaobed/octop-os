@@ -7,6 +7,7 @@ typedef struct MessageReceiver {
 	Queue *queue;
 	sem_t * sem;
     int shared;
+	int key;
 } MessageReceiver;
 
 

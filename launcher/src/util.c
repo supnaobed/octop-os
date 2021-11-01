@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include "include/proc.h"
+#include "../include/proc.h"
 #define APPS_PATH "../apps/"
 
 int launch(char *package_id){

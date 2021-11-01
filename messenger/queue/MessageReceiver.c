@@ -13,11 +13,12 @@ void *Messanger(void *input)
 	int ret;
 	int mtype=1;
 
-	qid = messageQueueGet(key);
 
     MessageReceiver * mr = (MessageReceiver*)input;
     Queue * queue = mr->queue;
     sem_t *sem = mr->sem;
+
+	qid = messageQueueGet(mr->key);
 
 	if(qid == -1){ return NULL; }
     while (1) {

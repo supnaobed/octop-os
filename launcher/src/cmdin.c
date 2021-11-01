@@ -3,7 +3,7 @@
 #include <signal.h>
 #include <unistd.h>
 #include <stdio.h>
-#include "include/cmd.h"
+#include "../include/cmd.h"
 
 int args(char * text, Cmd * cmd){
     cmd->package_id = strtok(text," ,-");
