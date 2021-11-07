@@ -33,7 +33,6 @@ void *MainLifecycle(void *vargp)
     while (1) {
        enqueueMessages(&messageReceiver, handleMessage);
     }
-    stop(&app);
     return NULL;
 }
 

@@ -41,6 +41,7 @@
         "functional": "c",
         "cmd.h": "c",
         "__node_handle": "c",
-        "sender.h": "c"
+        "sender.h": "c",
+        "move.h": "c"
     }
 }

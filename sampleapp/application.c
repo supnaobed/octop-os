@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "App.h"
+#include "Move.h"
 #include <stdio.h>
 #include <unistd.h>
 #include <pthread.h>
@@ -15,6 +16,8 @@ void *hard_work(void *vargp){
 
 
 int start(struct App * app){
+   move(100);
+   rotate(25);
    printf("start %d\n", getpid());
    pthread_t thread_id;
    pthread_create(&thread_id, NULL, hard_work, NULL);
