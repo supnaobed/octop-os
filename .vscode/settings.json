@@ -42,6 +42,8 @@
         "cmd.h": "c",
         "__node_handle": "c",
         "sender.h": "c",
-        "move.h": "c"
+        "move.h": "c",
+        "motor.h": "c",
+        "smbus.h": "c"
     }
 }
