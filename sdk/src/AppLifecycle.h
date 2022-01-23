@@ -1,4 +1,3 @@
-#include "App.h"
 #ifndef APP_LIFECYCLE_DELEGATE
 #define APP_LIFECYCLE_DELEGATE
 

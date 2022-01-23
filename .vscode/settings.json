@@ -44,6 +44,11 @@
         "sender.h": "c",
         "move.h": "c",
         "motor.h": "c",
-        "smbus.h": "c"
+        "smbus.h": "c",
+        "pthread.h": "c",
+        "socketserver.h": "c",
+        "platform.h": "c",
+        "stdint.h": "c",
+        "ioctl.h": "c"
     }
 }
